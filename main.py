@@ -1,5 +1,6 @@
 import pygame
 import sys
+import my_sprites
 
 pygame.init()
 
@@ -10,8 +11,9 @@ pygame.display.set_caption("The best game")
 screen=pygame.display.set_mode(SIZE)
 
 def drawing():
-    screen.fill((0, 0, 0))
-
+    screen.fill((0, 0, 0)) 
+    
+    screen.blit(my_sprites.goblin, (40, 40))
 def main():
     RUN=True
     while RUN:
