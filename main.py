@@ -1,11 +1,13 @@
 import pygame
 import sys
 import my_sprites
+import pygame.locals
 
 pygame.init()
 
 SIZE=WIDTH, HEIGHT=640, 480
 FPS=60
+
 clock=pygame.time.Clock
 pygame.display.set_caption("The best game")
 
@@ -15,6 +17,7 @@ def drawing():
     screen.fill((0, 0, 0)) 
     
     screen.blit(my_sprites.goblin, (40, 40))
+
 def main():
     RUN=True
     while RUN:
