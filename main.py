@@ -10,7 +10,7 @@ FPS=60
 Hp=37 #тестовое значение здоровья
 HpMAX=Hp
 
-clock=pygame.time.Clock
+clock=pygame.time.Clock()
 pygame.display.set_caption("The best game")
 
 screen=pygame.display.set_mode(SIZE)
