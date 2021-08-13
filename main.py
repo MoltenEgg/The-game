@@ -7,6 +7,8 @@ pygame.init()
 
 SIZE=WIDTH, HEIGHT=640, 480
 FPS=60
+Hp=37 #тестовое значение здоровья
+HpMAX=Hp
 
 clock=pygame.time.Clock
 pygame.display.set_caption("The best game")
