@@ -23,7 +23,7 @@ def drawing(Hp, HpMAX):
     health_bar_width_stat=64
     health_bar_width_dinamic=health_bar_width_stat*Hp//HpMAX
 
-    screen.fill((0, 0, 0))
+    screen.fill((56, 160, 153))
     health_bar=pygame.Rect(ENEMY_PLACEMENT_x, ENEMY_PLACEMENT_y+66, health_bar_width_dinamic, 8)
     pygame.draw.rect(screen, (0, 255, 0), health_bar)
     pygame.draw.rect(screen, (255, 255, 255), (health_bar.x, health_bar.y, health_bar_width_stat, 8), 2)
