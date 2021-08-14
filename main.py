@@ -24,14 +24,26 @@ def drawing(Hp, HpMAX):
     health_bar_width_dinamic=health_bar_width_stat*Hp//HpMAX
 
     screen.fill((56, 160, 153))
+
+    #Шкала здоровья
     health_bar=pygame.Rect(ENEMY_PLACEMENT_x, ENEMY_PLACEMENT_y+66, health_bar_width_dinamic, 8)
-    pygame.draw.rect(screen, (0, 255, 0), health_bar)
+    if health_bar_width_dinamic>=0.7*health_bar_width_stat:
+        pygame.draw.rect(screen, (0, 255, 0), health_bar) #Рисуем шкалу здоровья
+    elif health_bar_width_dinamic<0.7*health_bar_width_stat and health_bar_width_dinamic>=0.3*health_bar_width_stat:
+        pygame.draw.rect(screen, (255, 255, 0), health_bar) #Рисуем шкалу здоровья
+    else:
+        pygame.draw.rect(screen, (255, 0, 0), health_bar)
     pygame.draw.rect(screen, (255, 255, 255), (health_bar.x, health_bar.y, health_bar_width_stat, 8), 2)
-    screen.blit(my_sprites.goblin, (ENEMY_PLACEMENT))
+
+    #Рисую гоблина
+    if Hp<=0:
+        screen.blit(my_sprites.goblin_dead, (ENEMY_PLACEMENT))
+    else:
+        screen.blit(my_sprites.goblin, (ENEMY_PLACEMENT))
     pygame.display.update()
 
 def main():
-    Hp=37
+    Hp=50
     HpMAX=Hp
     RUN=True
     
@@ -42,10 +54,10 @@ def main():
                 RUN=False
                 sys.exit()
             if event.type == pygame.KEYDOWN:
-                if event.key == K_a:
-                    Hp-=5
-                if event.key == K_b:
-                    Hp+=5
+                if event.key == K_a and Hp>0:
+                    Hp-=2
+                if event.key == K_b and Hp<HpMAX:
+                    Hp+=2
 
 
         drawing(Hp, HpMAX)        
