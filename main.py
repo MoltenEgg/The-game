@@ -1,9 +1,9 @@
 import pygame
 import sys
 
-from pygame.constants import K_a, K_e
+from pygame.locals import *
 import my_sprites
-import pygame.locals
+
 
 
 pygame.init()
@@ -44,7 +44,7 @@ def main():
             if event.type == pygame.KEYDOWN:
                 if event.key == K_a:
                     Hp-=5
-                if event.key == K_e:
+                if event.key == K_b:
                     Hp+=5
 
 
