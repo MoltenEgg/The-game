@@ -3,6 +3,7 @@ import sys
 
 from pygame.locals import *
 import my_sprites
+import enemes
 
 
 
@@ -48,7 +49,8 @@ def drawing(Hp, HpMAX):
     if Hp<=0:
         screen.blit(my_sprites.goblin_dead, (ENEMY_PLACEMENT))
     else:
-        screen.blit(my_sprites.goblin, (ENEMY_PLACEMENT))
+        enemes.goblin.draw_alive(screen, ENEMY_PLACEMENT_x, ENEMY_PLACEMENT_y)
+        #screen.blit(my_sprites.goblin, (ENEMY_PLACEMENT))
 
     pygame.display.update()
 
