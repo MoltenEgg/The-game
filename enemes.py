@@ -7,12 +7,14 @@ class Enemy:
         self.alive_sprite=alive_sprite
         self.dead_sprite=dead_sprite
     
-    def draw_alive(self, surface, x, y):
+    def draw_alive(self, surface, coor):
         surface.blit(self.alive_sprite, (x, y))
-
+    
+    def draw_dead(self, surface, x, y):
+        surface.blit(self.dead_sprite, (x, y))
 
 goblin=Enemy('goblin', my_sprites.goblin, my_sprites.goblin_dead)
-
+human=Enemy('human', my_sprites.human, my_sprites.human_dead)
 
 
 

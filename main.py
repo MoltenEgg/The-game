@@ -47,7 +47,7 @@ def drawing(Hp, HpMAX):
     #Рисую гоблина
     
     if Hp<=0:
-        screen.blit(my_sprites.goblin_dead, (ENEMY_PLACEMENT))
+        enemes.goblin.draw_dead(screen, ENEMY_PLACEMENT_x, ENEMY_PLACEMENT_y)
     else:
         enemes.goblin.draw_alive(screen, ENEMY_PLACEMENT_x, ENEMY_PLACEMENT_y)
         #screen.blit(my_sprites.goblin, (ENEMY_PLACEMENT))
