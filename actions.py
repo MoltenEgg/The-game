@@ -1,4 +1,4 @@
-init pygame
+import pygame
 
 def attack (Hp, Ap):
     Hp-=5
